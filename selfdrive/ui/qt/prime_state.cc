@@ -33,10 +33,11 @@ void PrimeState::handleReply(const QString& response, bool success) {
     return;
   }
 
-  QJsonObject json = doc.object();
-  bool is_paired = json["is_paired"].toBool();
-  auto type = static_cast<PrimeState::Type>(json["prime_type"].toInt());
-  setType(is_paired ? type : PrimeState::PRIME_TYPE_UNPAIRED);
+  // QJsonObject json = doc.object();
+  // bool is_paired = json["is_paired"].toBool();
+  // auto type = static_cast<PrimeState::Type>(json["prime_type"].toInt());
+  // setType(is_paired ? type : PrimeState::PRIME_TYPE_UNPAIRED);
+  setType(PrimeState::PRIME_TYPE_LITE);
 }
 
 void PrimeState::setType(PrimeState::Type type) {
